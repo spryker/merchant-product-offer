@@ -12,9 +12,7 @@ use Spryker\Zed\ProductExtension\Dependency\Plugin\ProductConcreteExpanderPlugin
 
 /**
  * @method \Spryker\Zed\MerchantProductOffer\Business\MerchantProductOfferFacadeInterface getFacade()
- * @method \Spryker\Zed\MerchantProductOffer\Communication\MerchantProductOfferCommunicationFactory getFactory()
  * @method \Spryker\Zed\MerchantProductOffer\MerchantProductOfferConfig getConfig()
- * @method \Spryker\Zed\MerchantProductOffer\Persistence\MerchantProductOfferQueryContainerInterface getQueryContainer()
  */
 class MerchantProductOfferProductConcreteExpanderPlugin extends AbstractPlugin implements ProductConcreteExpanderPluginInterface
 {
