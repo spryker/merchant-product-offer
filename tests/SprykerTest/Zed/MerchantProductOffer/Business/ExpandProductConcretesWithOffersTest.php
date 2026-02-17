@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Spryker Marketplace License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\MerchantProductOffer\Business\Facade;
+namespace SprykerTest\Zed\MerchantProductOffer\Business;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\ProductOfferTransfer;
@@ -17,7 +17,6 @@ use Generated\Shared\Transfer\ProductOfferTransfer;
  * @group Zed
  * @group MerchantProductOffer
  * @group Business
- * @group Facade
  * @group ExpandProductConcretesWithOffersTest
  * Add your own group annotations below this line
  */
@@ -63,16 +62,19 @@ class ExpandProductConcretesWithOffersTest extends Unit
         $productOfferTransfer1ForProduct1 = $this->tester->haveProductOffer([
             ProductOfferTransfer::ID_PRODUCT_CONCRETE => $productConcreteTransfers[0]->getIdProductConcrete(),
             ProductOfferTransfer::CONCRETE_SKU => $productConcreteTransfers[0]->getSku(),
+            ProductOfferTransfer::MERCHANT_NAME => null,
         ]);
 
         $productOfferTransfer2ForProduct1 = $this->tester->haveProductOffer([
             ProductOfferTransfer::ID_PRODUCT_CONCRETE => $productConcreteTransfers[0]->getIdProductConcrete(),
             ProductOfferTransfer::CONCRETE_SKU => $productConcreteTransfers[0]->getSku(),
+            ProductOfferTransfer::MERCHANT_NAME => null,
         ]);
 
         $productOfferTransfer1ForProduct2 = $this->tester->haveProductOffer([
             ProductOfferTransfer::ID_PRODUCT_CONCRETE => $productConcreteTransfers[1]->getIdProductConcrete(),
             ProductOfferTransfer::CONCRETE_SKU => $productConcreteTransfers[1]->getSku(),
+            ProductOfferTransfer::MERCHANT_NAME => null,
         ]);
 
         $offersForProduct1ToCheck = [
