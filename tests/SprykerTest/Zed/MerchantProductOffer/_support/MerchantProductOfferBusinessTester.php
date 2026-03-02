@@ -38,27 +38,16 @@ class MerchantProductOfferBusinessTester extends Actor
         'updated_at',
     ];
 
-    /**
-     * @param array $productOffer
-     *
-     * @return array
-     */
     public function removeDynamicProductOfferFields(array $productOffer): array
     {
         return array_diff_key($productOffer, array_flip(static::FIELDS_TO_REMOVE));
     }
 
-    /**
-     * @return void
-     */
     public function ensureProductOfferTablesAreEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getProductOfferQuery());
     }
 
-    /**
-     * @return \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery
-     */
     protected function getProductOfferQuery(): SpyProductOfferQuery
     {
         return SpyProductOfferQuery::create();

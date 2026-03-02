@@ -33,11 +33,6 @@ class MerchantProductOfferDependencyProvider extends AbstractBundleDependencyPro
      */
     public const FACADE_MERCHANT = 'FACADE_MERCHANT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -48,11 +43,6 @@ class MerchantProductOfferDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -62,11 +52,6 @@ class MerchantProductOfferDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductOfferPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_OFFER, $container->factory(function () {
@@ -76,11 +61,6 @@ class MerchantProductOfferDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductOfferFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT_OFFER, function (Container $container) {
@@ -92,11 +72,6 @@ class MerchantProductOfferDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT, function (Container $container) {

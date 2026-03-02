@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ShoppingListItemCollectionTransfer;
 
 interface ShoppingListItemExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function expandShoppingListItemCollectionWithMerchantReference(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ShoppingListItemCollectionTransfer;

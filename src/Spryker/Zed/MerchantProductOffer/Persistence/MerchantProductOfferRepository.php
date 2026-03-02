@@ -42,12 +42,6 @@ class MerchantProductOfferRepository extends AbstractRepository implements Merch
         return $productOfferQuery->find()->getData();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer
-     * @param \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery $productOfferQuery
-     *
-     * @return \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery
-     */
     protected function applyFiltersDeprecated(
         MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer,
         SpyProductOfferQuery $productOfferQuery
@@ -122,12 +116,6 @@ class MerchantProductOfferRepository extends AbstractRepository implements Merch
         return $productOfferQuery;
     }
 
-    /**
-     * @param \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery $productOfferQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery
-     */
     protected function applyMerchantProductOfferPagination(
         SpyProductOfferQuery $productOfferQuery,
         PaginationTransfer $paginationTransfer

@@ -31,9 +31,6 @@ class MerchantProductOfferFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetProductOfferCollectionReturnsFilledCollection(): void
     {
         // Arrange
@@ -55,9 +52,6 @@ class MerchantProductOfferFacadeTest extends Unit
         $this->assertNotEmpty($productOfferCollectionTransfer->getProductOffers());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckingShoppingListItemWithActiveAndApprovedMerchantSucceeds(): void
     {
         // Arrange
@@ -71,9 +65,6 @@ class MerchantProductOfferFacadeTest extends Unit
         $this->assertEmpty($shoppingListPreAddItemCheckResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckingShoppingListItemWithInactiveAndApprovedMerchantFails(): void
     {
         // Arrange
@@ -87,9 +78,6 @@ class MerchantProductOfferFacadeTest extends Unit
         $this->assertCount(1, $shoppingListPreAddItemCheckResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckingShoppingListItemWithActiveAndUnapprovedMerchantFails(): void
     {
         // Arrange
@@ -103,9 +91,6 @@ class MerchantProductOfferFacadeTest extends Unit
         $this->assertCount(2, $shoppingListPreAddItemCheckResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testCheckingShoppingListItemWithInactiveAndUnapprovedMerchantFails(): void
     {
         // Arrange
@@ -119,12 +104,6 @@ class MerchantProductOfferFacadeTest extends Unit
         $this->assertCount(2, $shoppingListPreAddItemCheckResponseTransfer->getMessages());
     }
 
-    /**
-     * @param bool $isActiveStatus
-     * @param string $merchantStatus
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     protected function createShoppingListItem(bool $isActiveStatus, string $merchantStatus): ShoppingListItemTransfer
     {
         $merchantTransfer = $this->tester->haveMerchant([

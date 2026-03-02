@@ -13,17 +13,7 @@ use Generated\Shared\Transfer\ProductOfferTransfer;
 
 interface MerchantProductOfferToProductOfferFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferCriteriaTransfer $productOfferCriteria
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferCollectionTransfer
-     */
     public function get(ProductOfferCriteriaTransfer $productOfferCriteria): ProductOfferCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferCriteriaTransfer $productOfferCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferTransfer|null
-     */
     public function findOne(ProductOfferCriteriaTransfer $productOfferCriteriaTransfer): ?ProductOfferTransfer;
 }

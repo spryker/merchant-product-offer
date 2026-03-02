@@ -27,9 +27,6 @@ class ExpandProductConcretesWithOffersTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testProductConcretesWasNotExpandedByOffersWhenNoOffers(): void
     {
         // Arrange
@@ -48,9 +45,6 @@ class ExpandProductConcretesWithOffersTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testProductConcretesExpandedByOffers(): void
     {
         // Arrange
@@ -107,9 +101,6 @@ class ExpandProductConcretesWithOffersTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMerchantNameAddedToProductOffer(): void
     {
         // Arrange

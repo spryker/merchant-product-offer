@@ -17,9 +17,6 @@ use Spryker\Zed\MerchantProductOffer\MerchantProductOfferDependencyProvider;
  */
 class MerchantProductOfferPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ProductOffer\Persistence\SpyProductOfferQuery
-     */
     public function getProductOfferPropelQuery(): SpyProductOfferQuery
     {
         return $this->getProvidedDependency(MerchantProductOfferDependencyProvider::PROPEL_QUERY_PRODUCT_OFFER);

@@ -43,9 +43,6 @@ class HydrateCartReorderItemsWithMerchantProductOfferTest extends Unit
      */
     protected MerchantProductOfferBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldAddReorderItemsWithMerchantReferenceAndProductOfferReferenceWhenItemWasNotAddedToReorderItems(): void
     {
         // Arrange
@@ -78,9 +75,6 @@ class HydrateCartReorderItemsWithMerchantProductOfferTest extends Unit
         $this->assertSame($orderItemTransfers[1]->getQuantityOrFail(), $reorderItemTransfer->getQuantity());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldAddMerchantReferenceAndProductOfferReferenceToReorderItemWhenItemWasPreviouslyAddedToReorderItems(): void
     {
         // Arrange
@@ -115,9 +109,6 @@ class HydrateCartReorderItemsWithMerchantProductOfferTest extends Unit
         $this->assertSame(static::TEST_PRODUCT_OFFER_REFERENCE, $reorderItemTransfer->getProductOfferReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenNoItemsWithMerchantReferenceAndProductOfferReferenceProvided(): void
     {
         // Arrange

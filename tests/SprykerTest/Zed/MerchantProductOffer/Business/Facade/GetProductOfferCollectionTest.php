@@ -38,9 +38,6 @@ class GetProductOfferCollectionTest extends Unit
      */
     protected MerchantProductOfferBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetProductOfferCollectionReturnsEmptyCollectionWhileNoCriteriaMatched(): void
     {
         // Arrange
@@ -59,9 +56,6 @@ class GetProductOfferCollectionTest extends Unit
         $this->assertCount(0, $merchantProductOptionGroupCollectionTransfer->getProductOffers());
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductOfferCollectionReturnsCollectionWithOneMerchantProductOptionGroupWhileCriteriasMatched(): void
     {
         // Arrange
@@ -99,9 +93,6 @@ class GetProductOfferCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductOfferCollectionReturnsCollectionWithThreeProductOffersWhileHavingLimitOffsetPaginationApplied(): void
     {
         // Arrange

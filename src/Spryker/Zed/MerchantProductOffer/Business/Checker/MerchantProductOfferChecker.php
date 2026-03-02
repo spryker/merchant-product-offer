@@ -46,10 +46,6 @@ class MerchantProductOfferChecker implements MerchantProductOfferCheckerInterfac
      */
     protected $merchantFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToProductOfferFacadeInterface $productOfferFacade
-     * @param \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToMerchantFacadeInterface $merchantFacade
-     */
     public function __construct(
         MerchantProductOfferToProductOfferFacadeInterface $productOfferFacade,
         MerchantProductOfferToMerchantFacadeInterface $merchantFacade
@@ -58,11 +54,6 @@ class MerchantProductOfferChecker implements MerchantProductOfferCheckerInterfac
         $this->merchantFacade = $merchantFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListPreAddItemCheckResponseTransfer
-     */
     public function check(ShoppingListItemTransfer $shoppingListItemTransfer): ShoppingListPreAddItemCheckResponseTransfer
     {
         $shoppingListPreAddItemCheckResponseTransfer = new ShoppingListPreAddItemCheckResponseTransfer();
@@ -76,12 +67,6 @@ class MerchantProductOfferChecker implements MerchantProductOfferCheckerInterfac
         return $shoppingListPreAddItemCheckResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListPreAddItemCheckResponseTransfer $shoppingListPreAddItemCheckResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListPreAddItemCheckResponseTransfer
-     */
     protected function validateMerchantProductOffer(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         ShoppingListPreAddItemCheckResponseTransfer $shoppingListPreAddItemCheckResponseTransfer
@@ -123,11 +108,6 @@ class MerchantProductOfferChecker implements MerchantProductOfferCheckerInterfac
         return $shoppingListPreAddItemCheckResponseTransfer;
     }
 
-    /**
-     * @param string $productOfferReference
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferTransfer|null
-     */
     protected function findProductOfferTransferByProductOfferReference(
         string $productOfferReference
     ): ?ProductOfferTransfer {
@@ -137,11 +117,6 @@ class MerchantProductOfferChecker implements MerchantProductOfferCheckerInterfac
         return $this->productOfferFacade->findOne($productOfferCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferTransfer $productOfferTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantTransfer|null
-     */
     protected function findMerchantTransferByMerchantReference(
         ProductOfferTransfer $productOfferTransfer
     ): ?MerchantTransfer {

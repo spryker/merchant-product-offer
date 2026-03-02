@@ -28,9 +28,6 @@ use Spryker\Zed\MerchantProductOffer\MerchantProductOfferDependencyProvider;
  */
 class MerchantProductOfferBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Business\MerchantProductOfferReader\MerchantProductOfferReaderInterface
-     */
     public function createMerchantProductOfferReader(): MerchantProductOfferReaderInterface
     {
         return new MerchantProductOfferReader(
@@ -39,17 +36,11 @@ class MerchantProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToProductOfferFacadeInterface
-     */
     public function getProductOfferFacade(): MerchantProductOfferToProductOfferFacadeInterface
     {
         return $this->getProvidedDependency(MerchantProductOfferDependencyProvider::FACADE_PRODUCT_OFFER);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Business\Expander\ProductConcreteOfferExpanderInterface
-     */
     public function createProductConcreteOfferExpander(): ProductConcreteOfferExpanderInterface
     {
         return new ProductConcreteOfferExpander(
@@ -58,9 +49,6 @@ class MerchantProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Business\Expander\ShoppingListItemExpanderInterface
-     */
     public function createShoppingListItemExpander(): ShoppingListItemExpanderInterface
     {
         return new ShoppingListItemExpander(
@@ -68,25 +56,16 @@ class MerchantProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Business\Hydrator\CartReorderItemHydratorInterface
-     */
     public function createCartReorderItemHydrator(): CartReorderItemHydratorInterface
     {
         return new CartReorderItemHydrator();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToMerchantFacadeInterface
-     */
     public function getMerchantFacade(): MerchantProductOfferToMerchantFacadeInterface
     {
         return $this->getProvidedDependency(MerchantProductOfferDependencyProvider::FACADE_MERCHANT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductOffer\Business\Checker\MerchantProductOfferCheckerInterface
-     */
     public function createMerchantProductOfferChecker(): MerchantProductOfferCheckerInterface
     {
         return new MerchantProductOfferChecker(

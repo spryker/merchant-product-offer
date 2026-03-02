@@ -19,19 +19,11 @@ class ShoppingListItemExpander implements ShoppingListItemExpanderInterface
      */
     protected $productOfferFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToProductOfferFacadeInterface $productOfferFacade
-     */
     public function __construct(MerchantProductOfferToProductOfferFacadeInterface $productOfferFacade)
     {
         $this->productOfferFacade = $productOfferFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer
-     */
     public function expandShoppingListItemCollectionWithMerchantReference(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ShoppingListItemCollectionTransfer {
@@ -59,11 +51,6 @@ class ShoppingListItemExpander implements ShoppingListItemExpanderInterface
         return $shoppingListItemCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferCriteriaTransfer
-     */
     protected function getProductOfferCriteriaTransfer(
         ShoppingListItemCollectionTransfer $shoppingListItemCollectionTransfer
     ): ProductOfferCriteriaTransfer {
@@ -78,11 +65,6 @@ class ShoppingListItemExpander implements ShoppingListItemExpanderInterface
         return $productOfferCriteriaTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferCollectionTransfer $productOfferCollectionTransfer
-     *
-     * @return array
-     */
     protected function getMerchantReferencesIndexedByProductOfferReference(
         ProductOfferCollectionTransfer $productOfferCollectionTransfer
     ): array {

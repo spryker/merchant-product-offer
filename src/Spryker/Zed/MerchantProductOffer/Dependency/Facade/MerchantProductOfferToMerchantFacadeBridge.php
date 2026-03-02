@@ -26,21 +26,11 @@ class MerchantProductOfferToMerchantFacadeBridge implements MerchantProductOffer
         $this->merchantFacade = $merchantFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCriteriaTransfer $merchantCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantTransfer|null
-     */
     public function findOne(MerchantCriteriaTransfer $merchantCriteriaTransfer): ?MerchantTransfer
     {
         return $this->merchantFacade->findOne($merchantCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCriteriaTransfer $merchantCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCollectionTransfer
-     */
     public function get(MerchantCriteriaTransfer $merchantCriteriaTransfer): MerchantCollectionTransfer
     {
         return $this->merchantFacade->get($merchantCriteriaTransfer);

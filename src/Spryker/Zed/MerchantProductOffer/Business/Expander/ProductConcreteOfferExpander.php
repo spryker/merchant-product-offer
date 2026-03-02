@@ -26,10 +26,6 @@ class ProductConcreteOfferExpander implements ProductConcreteOfferExpanderInterf
      */
     protected $merchantFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToProductOfferFacadeInterface $productOfferFacade
-     * @param \Spryker\Zed\MerchantProductOffer\Dependency\Facade\MerchantProductOfferToMerchantFacadeInterface $merchantFacade
-     */
     public function __construct(
         MerchantProductOfferToProductOfferFacadeInterface $productOfferFacade,
         MerchantProductOfferToMerchantFacadeInterface $merchantFacade
@@ -85,22 +81,12 @@ class ProductConcreteOfferExpander implements ProductConcreteOfferExpanderInterf
         return $result;
     }
 
-    /**
-     * @param array $productConcreteSkus
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferCriteriaTransfer
-     */
     protected function createProductOfferCriteriaTransfer(array $productConcreteSkus): ProductOfferCriteriaTransfer
     {
         return (new ProductOfferCriteriaTransfer())
             ->setConcreteSkus($productConcreteSkus);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferCollectionTransfer $productOfferCollection
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferCollectionTransfer
-     */
     protected function expandProductOffersWithMerchantName(
         ProductOfferCollectionTransfer $productOfferCollection
     ): ProductOfferCollectionTransfer {
@@ -123,11 +109,6 @@ class ProductConcreteOfferExpander implements ProductConcreteOfferExpanderInterf
         return $productOfferCollection;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferCollectionTransfer $productOfferCollection
-     *
-     * @return \Generated\Shared\Transfer\MerchantCriteriaTransfer
-     */
     protected function createMerchantCriteriaTransfer(
         ProductOfferCollectionTransfer $productOfferCollection
     ): MerchantCriteriaTransfer {
