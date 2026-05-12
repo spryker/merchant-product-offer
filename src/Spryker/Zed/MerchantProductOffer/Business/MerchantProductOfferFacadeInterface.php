@@ -18,12 +18,26 @@ interface MerchantProductOfferFacadeInterface
 {
     /**
      * Specification:
+     * - Pre-warms the internal product offer cache for all SKUs and store IDs given in criteria.
+     * - Uses `MerchantProductOfferCriteriaTransfer.MerchantProductOfferConditions.skus` to filter product offers by SKUs.
+     * - Uses `MerchantProductOfferCriteriaTransfer.MerchantProductOfferConditions.storeIds` to filter product offers by store IDs.
+     * - Calling this method before individual `getProductOfferCollection` calls prevents N+1 queries during bulk expansion.
+     *
+     * @api
+     */
+    public function preloadProductOfferCollection(
+        MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer
+    ): void;
+
+    /**
+     * Specification:
      * - Gets ProductOfferCollectionTransfer filtered by MerchantProductOfferCriteriaTransfer.
      * - Uses `MerchantProductOfferCriteriaTransfer.MerchantProductOfferConditions.skus` to filter product offers by skus.
      * - Uses `MerchantProductOfferCriteriaTransfer.MerchantProductOfferConditions.isActive` to filter product offers by isActive.
      * - Uses `MerchantProductOfferCriteriaTransfer.MerchantProductOfferConditions.merchantReferences` to filter product offers by merchant references.
      * - Uses `MerchantProductOfferCriteriaTransfer.MerchantProductOfferConditions.storeIds` to filter product offers by store ids.
      * - Uses `MerchantProductOfferCriteriaTransfer.pagination.limit` and `MerchantProductOfferCriteriaTransfer.pagination.offset` to paginate results with limit and offset.
+     * - Returns data from the internal cache when a single SKU and single store ID are given and the cache was pre-warmed via `preloadProductOfferCollection`.
      *
      * @api
      *

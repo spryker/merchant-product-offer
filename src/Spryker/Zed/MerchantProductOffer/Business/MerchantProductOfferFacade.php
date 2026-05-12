@@ -25,6 +25,19 @@ class MerchantProductOfferFacade extends AbstractFacade implements MerchantProdu
      * {@inheritDoc}
      *
      * @api
+     */
+    public function preloadProductOfferCollection(
+        MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer
+    ): void {
+        $this->getFactory()
+            ->createMerchantProductOfferReader()
+            ->preloadProductOfferCollection($merchantProductOfferCriteriaTransfer);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
      *
      * @param \Generated\Shared\Transfer\MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer
      *

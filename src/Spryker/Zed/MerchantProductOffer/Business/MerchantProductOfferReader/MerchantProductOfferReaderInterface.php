@@ -15,4 +15,8 @@ interface MerchantProductOfferReaderInterface
     public function getMerchantProductOfferCollection(
         MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer
     ): ProductOfferCollectionTransfer;
+
+    public function preloadProductOfferCollection(
+        MerchantProductOfferCriteriaTransfer $merchantProductOfferCriteriaTransfer
+    ): void;
 }
